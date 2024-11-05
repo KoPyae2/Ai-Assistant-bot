@@ -51,7 +51,7 @@ export default function CreateChatbot() {
 
 
   return (
-    <div className="flex flex-col h-auto items-center justify-center md:flex-row md:space-x-10 bg-[#3C3D37] p-10 rounded-md m-10">
+    <div className="flex flex-col h-auto items-center justify-center md:flex-row md:space-x-10 bg-[#3C3D37] p-6 rounded-md m-5">
       <Avatar seed="create-chatbot" className='w-32 h-32' />
       <div className='text-white'>
         <h1 className="text-xl lg:text-3xl font-semibold">Create</h1>
