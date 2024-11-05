@@ -14,7 +14,7 @@ export default function Home() {
       </h2>
       <Link href="/create-chatbots">
         <Button className="bg-[#697565]">
-          Lets get started by creating your first chatbot
+          Get started by creating your chatbot
         </Button>
       </Link>
     </main>
