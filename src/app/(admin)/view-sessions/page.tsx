@@ -41,6 +41,7 @@ export default function ViewSessions() {
         if (error) {
             console.error(error);
         } else {
+            /* eslint-disable */
             setChatbots(data as any);
             console.log(3333, data);
         }

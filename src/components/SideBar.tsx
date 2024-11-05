@@ -1,5 +1,4 @@
-import { ChatBubbleIcon } from '@radix-ui/react-icons'
-import { BotMessageSquare, ChartGanttIcon, PencilLine, SearchIcon } from 'lucide-react'
+import { BotMessageSquare, PencilLine, SearchIcon } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
 

@@ -3,13 +3,14 @@
 import Avatar from '@/components/Avatar';
 import { Button } from '@/components/ui/button';
 import { supabase } from '@/lib/supabase';
+import { Chatbot, ChatbotCharacteristics } from '@/types/types';
 import { useUser } from '@clerk/nextjs'
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
 
 export default function ViewChatbot() {
     const { user } = useUser();
-    const [chatbots, setChatbots] = useState<any[]>([]);
+    const [chatbots, setChatbots] = useState<Chatbot[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     useEffect(() => {
         if (!user) return;
@@ -39,7 +40,7 @@ export default function ViewChatbot() {
             if (error) {
                 console.error(error);
             } else if (data) {
-                setChatbots(data);
+                setChatbots(data as Chatbot[]);
             }
 
             setLoading(false);
@@ -92,7 +93,7 @@ export default function ViewChatbot() {
                                         <p>No characteristics added yet.</p>
                                     )}
 
-                                    {chatbot.chatbot_characteristics.map((characteristic: any,index:number) => (
+                                    {chatbot.chatbot_characteristics.map((characteristic: ChatbotCharacteristics,index:number) => (
                                         <li className="list-disc break-words" key={index}>
                                             {characteristic.content}
                                         </li>

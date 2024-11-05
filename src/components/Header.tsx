@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 import Avatar from './Avatar'
-import { SignedIn, SignedOut, SignIn, SignInButton, UserButton } from '@clerk/nextjs'
+import { SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
 import { Button } from './ui/button'
 
 export default function Header() {

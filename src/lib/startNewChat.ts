@@ -33,7 +33,7 @@ async function startNewChat(
         const chatSessionId = chatSessionResponse[0].id;
 
          //3 insert init message
-        const { data, error } = await supabase
+        const { error } = await supabase
             .from('messages')
             .insert([
                 {

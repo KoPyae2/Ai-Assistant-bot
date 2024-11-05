@@ -37,6 +37,7 @@ export default function ViewSession() {
         if (error) {
             console.error(error);
         } else {
+            /* eslint-disable */
             setChatSession(data[0] as any);
             console.log(3333, data);
         }

@@ -31,7 +31,7 @@ export default function CreateChatbot() {
         setName('');
         console.log(1111, data[0].id);
         toast.success('Chatbot created successfully')
-        // router.push(`edit-chatbot/${data[0].id}`)
+        router.push(`edit-chatbot/${data[0].id}`)
       }else{
         toast.error(error.message)
       }
@@ -39,6 +39,8 @@ export default function CreateChatbot() {
 
     }
     catch (err) {
+      console.log('error creating chatbot', err);
+      
       setLoading(false)
     }
   }

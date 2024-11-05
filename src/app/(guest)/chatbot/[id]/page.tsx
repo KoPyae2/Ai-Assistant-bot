@@ -8,20 +8,19 @@ import {
     DialogFooter,
     DialogHeader,
     DialogTitle,
-    DialogTrigger,
 } from "@/components/ui/dialog"
-import { FormEvent, use, useEffect, useState } from 'react';
+import { FormEvent,  useEffect, useState } from 'react';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import Avatar from '@/components/Avatar';
 import Messages from '@/components/Messages';
-import { set, z } from 'zod'
+import {  z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { supabase } from '@/lib/supabase';
-import { ChatbotCharacteristics, ChatSession, Message } from '@/types/types';
+import {  ChatSession, Message } from '@/types/types';
 import startNewChat from '@/lib/startNewChat';
 import { toast } from 'sonner';
 
@@ -109,9 +108,6 @@ export default function ChatbotPage() {
 
             const result = await response.json();
 
-            console.log(result);
-
-
             setMessages((prevMessages) =>
                 prevMessages.map((msg) =>
                     msg.id === loadingMessage.id
@@ -122,7 +118,7 @@ export default function ChatbotPage() {
             setLoading(false);
 
             // save ai & user message
-            const { data, error } = await supabase
+            const { error } = await supabase
                 .from('messages')
                 .insert([
                     { 'chat_session_id': chatId, 'sender': 'user', 'content': message },
@@ -167,6 +163,7 @@ export default function ChatbotPage() {
         if (error) {
             console.error(error);
         } else {
+            /* eslint-disable */
             setChatSession(data[0] as any);
             console.log(3333, data);
         }
@@ -189,6 +186,7 @@ export default function ChatbotPage() {
     useEffect(() => {
         if (chatSession) {
             setMessages(chatSession.messages)
+            /* eslint-disable */
             setChatbotCharacteristics(chatSession.chatbots?.chatbot_characteristics as any)
         }
     }, [chatSession])

@@ -28,7 +28,7 @@ export default function EditChatbot() {
     e.preventDefault();
     if (!chatbotName) return
     startTransition(async () => {
-      const { data, error } = await supabase
+      const {  error } = await supabase
         .from('chatbots')
         .update({ name: chatbotName })
         .eq('id', id)
@@ -63,7 +63,7 @@ export default function EditChatbot() {
   const handleInsertCharacteristic = () => {
     startInsertTransition(async () => {
 
-      const { data, error } = await supabase
+      const {  error } = await supabase
         .from('chatbot_characteristics')
         .insert([
           { 'chatbot_id': id, content: newCharacteristic },
