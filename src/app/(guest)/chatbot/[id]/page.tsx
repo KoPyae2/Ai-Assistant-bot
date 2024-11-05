@@ -255,7 +255,7 @@ export default function ChatbotPage() {
                 </DialogContent>
             </Dialog>
 
-            <div className="flex flex-col justify-between flex-1 max-w-3xl mx-auto h-screen  md:h-[94%]  md:rounded-lg md:shadow-2xl md:mt-10">
+            <div className="flex flex-col justify-between flex-1 max-w-3xl mx-auto h-screen  md:h-[94%]  md:rounded-lg md:shadow-2xl md:mt-10 overflow-hidden">
                 <div className="pb-4 border-b sticky top-0 z-50 bg-[#4D7DFB] py-5 px-10 text-white md:rounded-t-lg flex items-center space-x-4 h-24">
                     <Avatar
                         seed={chatSession?.chatbots?.name as string}
