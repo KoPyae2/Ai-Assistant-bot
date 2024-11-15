@@ -17,6 +17,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"></meta>
       <html lang="en">
         <body
           className='min-h-screen flex bg-[#181C14]'

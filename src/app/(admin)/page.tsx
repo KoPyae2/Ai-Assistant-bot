@@ -4,7 +4,7 @@ import React from 'react'
 
 export default function Home() {
   return (
-    <main className="p-10 bg-[#3C3D37] m-10 rounded-md text-white">
+    <main className="p-6 bg-[#3C3D37] m-5 rounded-md text-white">
       <h1 className="text-4xl font-light">
         Welcome to <span className="text-[#6485F5] font-semibold">Assistly</span>
       </h1>
@@ -14,7 +14,7 @@ export default function Home() {
       </h2>
       <Link href="/create-chatbots">
         <Button className="bg-[#697565]">
-          Lets get started by creating your first chatbot
+          Get started by creating your chatbot
         </Button>
       </Link>
     </main>
