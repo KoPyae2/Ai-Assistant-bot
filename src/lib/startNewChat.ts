@@ -32,14 +32,15 @@ async function startNewChat(
         }
         const chatSessionId = chatSessionResponse[0].id;
 
-         //3 insert init message
+        //3 insert init message
         const { error } = await supabase
             .from('messages')
             .insert([
                 {
                     'chat_session_id': chatSessionId,
                     'sender': 'ai',
-                    'content': `Welcome ${guestName}!\n How can I assist you today? 🤔`
+                    'content': `Welcome ${guestName}!\n How can I assist you today? 🤔`,
+                    "created_at": new Date()
                 },
             ])
             .select()

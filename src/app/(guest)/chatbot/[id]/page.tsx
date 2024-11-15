@@ -9,18 +9,18 @@ import {
     DialogHeader,
     DialogTitle,
 } from "@/components/ui/dialog"
-import { FormEvent,  useEffect, useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import Avatar from '@/components/Avatar';
 import Messages from '@/components/Messages';
-import {  z } from 'zod'
+import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { supabase } from '@/lib/supabase';
-import {  ChatSession, Message } from '@/types/types';
+import { ChatSession, Message } from '@/types/types';
 import startNewChat from '@/lib/startNewChat';
 import { toast } from 'sonner';
 
@@ -121,14 +121,17 @@ export default function ChatbotPage() {
             const { error } = await supabase
                 .from('messages')
                 .insert([
-                    { 'chat_session_id': chatId, 'sender': 'user', 'content': message },
-                    { 'chat_session_id': chatId, 'sender': 'ai', 'content': result.content.response },
+                    { 'chat_session_id': chatId, 'sender': 'user', 'content': message, "created_at": new Date() },
+                    { 'chat_session_id': chatId, 'sender': 'ai', 'content': result.content.response, "created_at": new Date() },
                 ])
                 .select()
 
             if (error) {
                 toast.error(error.message)
             }
+
+            console.log(new Date());
+            
         }
         catch (err) {
             console.log(err);
