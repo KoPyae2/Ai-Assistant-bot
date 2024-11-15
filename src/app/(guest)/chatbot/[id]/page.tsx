@@ -213,7 +213,7 @@ export default function ChatbotPage() {
 
     return (
         <div className='w-screen h-screen'>
-            <Dialog open={isOpen} onOpenChange={setIsOpen}>
+            <Dialog open={isOpen}  >
                 <DialogContent className="sm:max-w-[425px]">
                     <form className='flex flex-col gap-2' onSubmit={handleInformationSubmit}>
                         <DialogHeader>
